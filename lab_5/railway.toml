@@ -1,0 +1,11 @@
+# railway.toml
+
+[[services]]
+command = "gunicorn app:app"
+env = { PYTHONPATH = "./" }
+name = "web"
+
+[[services]]
+command = "python worker.py"
+env = { PYTHONPATH = "./" }
+name = "worker"
